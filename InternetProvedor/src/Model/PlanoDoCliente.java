@@ -1,12 +1,21 @@
 package Model;
 
 public class PlanoDoCliente {
+	
+	private long id;
 	private Plano plano;
 	private boolean status;
 	
 	private static class Builder {
+		
+		private long id;
 		private Plano plano;
 		private boolean status;
+		
+		public Builder id ( long id ) {
+			this.id = id;
+			return this;
+		}
 		
 		public Builder plano ( Plano plano ) {
 			this.plano = plano;
@@ -25,6 +34,14 @@ public class PlanoDoCliente {
 			
 			return planoDoCliente;
 		}
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Plano getPlano() {

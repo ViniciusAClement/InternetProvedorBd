@@ -1,12 +1,21 @@
 package Model;
 
 public class Plano {
+	
+	private long id;
 	private int megas;
 	private double preco;
 	
 	private static class Builder{
+		
+		private long id;
 		private int megas;
 		private double preco;
+		
+		public Builder id ( long id ) {
+			this.id = id;
+			return this;
+		}
 		
 		public Builder megas ( int megas ) {
 			this.megas = megas;
@@ -26,6 +35,14 @@ public class Plano {
 			
 			return plano;
 		}
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public int getMegas() {
