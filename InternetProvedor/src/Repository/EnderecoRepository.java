@@ -3,7 +3,6 @@ package Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Cliente;
 import Model.Endereco;
 
 public class EnderecoRepository {
@@ -16,4 +15,9 @@ public class EnderecoRepository {
 	public void removeEnderecoById ( long id ) {
 		enderecoLista.removeIf(Endereco -> Endereco.getId() == id);
 	}
+
+	public List<Endereco> getEnderecoLista() {
+		return enderecoLista;
+	}
+	
 }

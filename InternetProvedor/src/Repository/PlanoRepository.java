@@ -16,4 +16,9 @@ public class PlanoRepository {
 	public void removePlanoById ( long id ) {
 		planoLista.removeIf(Plano -> Plano.getId() == id);
 	}
+
+	public List<Plano> getPlanoLista() {
+		return planoLista;
+	}
+	
 }

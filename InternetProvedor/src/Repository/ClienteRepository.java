@@ -16,4 +16,9 @@ public class ClienteRepository {
 	public void removeCLienteById ( long id ) {
 		clienteLista.removeIf(Cliente -> Cliente.getID() == id);
 	}
+
+	public List<Cliente> getClienteLista() {
+		return clienteLista;
+	}
+	
 }

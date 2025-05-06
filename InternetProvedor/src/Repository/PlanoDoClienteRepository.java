@@ -16,4 +16,9 @@ public class PlanoDoClienteRepository {
 	public void removePlanoDoClienteById ( long id ) {
 		planoDoClienteLista.removeIf(PlanoDoCliente -> PlanoDoCliente.getId() == id);
 	}
+
+	public List<PlanoDoCliente> getPlanoDoClienteLista() {
+		return planoDoClienteLista;
+	}
+	
 }
