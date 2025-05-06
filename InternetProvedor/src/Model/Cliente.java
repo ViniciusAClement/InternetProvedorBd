@@ -1,4 +1,4 @@
-package main;
+package Model;
 
 public class Cliente {
 	//atributos da classe cliente
