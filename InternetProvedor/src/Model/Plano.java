@@ -1,11 +1,12 @@
 package Model;
 
 public class Plano {
-	
+	//Atributos 
 	private long id;
 	private int megas;
 	private double preco;
 	
+	//builder da classe
 	private static class Builder{
 		
 		private long id;
@@ -36,7 +37,8 @@ public class Plano {
 			return plano;
 		}
 	}
-
+	
+	//get e set da classe
 	public long getId() {
 		return id;
 	}

@@ -1,11 +1,12 @@
 package Model;
 
 public class Endereco {
-	
+	//Atributos da classe Endereco
 	private long id;
 	private String rua;
 	private int numero;
 	
+	//Builder da classe Endereco
 	private static class Builder{
 		
 		private long id;
@@ -35,7 +36,7 @@ public class Endereco {
 			return endereco;
 		}
 	}
-	
+	//Getters e Setters da Classe Endereco
 	public long getId() {
 		return id;
 	}

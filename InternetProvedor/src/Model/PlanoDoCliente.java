@@ -1,11 +1,12 @@
 package Model;
 
 public class PlanoDoCliente {
-	
+	//atributos
 	private long id;
 	private Plano plano;
 	private boolean status;
 	
+	//BUilder
 	private static class Builder {
 		
 		private long id;
@@ -35,7 +36,8 @@ public class PlanoDoCliente {
 			return planoDoCliente;
 		}
 	}
-
+	
+	//get e set
 	public long getId() {
 		return id;
 	}
