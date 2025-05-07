@@ -3,6 +3,7 @@ package Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import Model.Cliente;
 import Model.Plano;
 
 /**
@@ -14,21 +15,28 @@ import Model.Plano;
 public class PlanoRepository {
 	
 	//lista ja instaciada
-	private List<Plano> planoLista = new ArrayList<>(); 
+	private static List<Plano> planoLista = new ArrayList<>(); 
 	
 	//add no final da lista
-	public void addPlano ( Plano plano ) {
+	public static void addPlano ( Plano plano ) {
 		planoLista.add(plano);
 	}
 	
 	//insere um id e remove se achar na lista
-	public void removePlanoById ( long id ) {
+	public static void removePlanoById ( long id ) {
 		planoLista.removeIf(Plano -> Plano.getId() == id);
 	}
 
 	//retorna a lista
-	public List<Plano> getPlanoLista() {
+	public static List<Plano> getPlanoLista() {
 		return planoLista;
 	}
 	
+	public static Plano readPlano ( long id ) {
+		Plano planp = planoLista.stream()
+				.filter(c -> c.getId() == id)
+			    .findFirst()
+			    .orElse(null);
+		return planp;
+	}
 }

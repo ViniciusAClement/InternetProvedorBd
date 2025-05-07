@@ -3,6 +3,7 @@ package Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import Model.Cliente;
 import Model.Endereco;
 
 /**
@@ -13,21 +14,28 @@ import Model.Endereco;
 
 public class EnderecoRepository {
 	//lista ja instaciada
-	private List<Endereco> enderecoLista = new ArrayList<>(); 
+	private static List<Endereco> enderecoLista = new ArrayList<>(); 
 	
 	//add no final da lista
-	public void addEndereco ( Endereco endereco ) {
+	public static void addEndereco ( Endereco endereco ) {
 		enderecoLista.add(endereco);
 	}
 	
 	//insere um id e remove se achar na lista
-	public void removeEnderecoById ( long id ) {
+	public static void removeEnderecoById ( long id ) {
 		enderecoLista.removeIf(Endereco -> Endereco.getId() == id);
 	}
 
 	//retorna a lista
-	public List<Endereco> getEnderecoLista() {
+	public static List<Endereco> getEnderecoLista() {
 		return enderecoLista;
 	}
 	
+	public static Endereco readEndereco ( long id ) {
+		Endereco endereco = enderecoLista.stream()
+				.filter(c -> c.getId() == id)
+			    .findFirst()
+			    .orElse(null);
+		return endereco;
+	}
 }

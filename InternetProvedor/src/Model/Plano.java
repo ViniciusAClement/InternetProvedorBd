@@ -7,7 +7,7 @@ public class Plano {
 	private double preco;
 	
 	//builder da classe
-	private static class Builder{
+	public static class Builder{
 		
 		private long id;
 		private int megas;
@@ -61,6 +61,11 @@ public class Plano {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	@Override
+	public String toString() {
+		return "Plano [id=" + id + ", megas=" + megas + ", preco=" + preco + "]";
 	}
 	
 	

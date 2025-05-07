@@ -5,13 +5,15 @@ public class Endereco {
 	private long id;
 	private String rua;
 	private int numero;
+	private long cliente_id;
 	
 	//Builder da classe Endereco
-	private static class Builder{
+	public static class Builder{
 		
 		private long id;
 		private String rua;
 		private int numero;
+		private long cliente_id;
 		
 		public Builder id ( long id ) {
 			this.id = id;
@@ -27,11 +29,18 @@ public class Endereco {
 			return this;
 		}
 		
+		public Builder cliente_id( long cliente_id ) {
+			this.cliente_id = cliente_id;
+			return this;
+		}
+		
 		public Endereco build () {
 			Endereco endereco = new Endereco();
 			
+			endereco.id = this.id;
 			endereco.rua = this.rua;
 			endereco.numero = this.numero;
+			endereco.cliente_id = this.cliente_id;
 			
 			return endereco;
 		}
@@ -60,5 +69,19 @@ public class Endereco {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+
+	public long getCliente_id() {
+		return cliente_id;
+	}
+
+	public void setCliente_id(long cliente_id) {
+		this.cliente_id = cliente_id;
+	}
+
+	@Override
+	public String toString() {
+		return "Endereco [id=" + id + ", rua=" + rua + ", numero=" + numero + ", cliente_id=" + cliente_id + "]";
+	}
+	
 	
 }

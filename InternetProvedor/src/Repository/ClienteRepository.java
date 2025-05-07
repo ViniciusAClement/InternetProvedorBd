@@ -13,21 +13,29 @@ import Model.Cliente;
 
 public class ClienteRepository {
 	//lista ja instaciada
-	private List<Cliente> clienteLista = new ArrayList<>();
+	private static List<Cliente> clienteLista = new ArrayList<>();
 	
 	//add no final da lista
-	public void addCliente ( Cliente cliente) {
+	public static void addCliente ( Cliente cliente) {
 		clienteLista.add(cliente);
 	}
 	
 	//insere um id e remove se achar na lista
-	public void removeCLienteById ( long id ) {
+	public static void removeCLienteById ( long id ) {
 		clienteLista.removeIf(Cliente -> Cliente.getID() == id);
 	}
 
 	//retorna a lista
-	public List<Cliente> getClienteLista() {
+	public static List<Cliente> getClienteLista() {
 		return clienteLista;
+	}
+	
+	public static Cliente readCliente ( long id ) {
+		Cliente cliente = clienteLista.stream()
+				.filter(c -> c.getID() == id)
+			    .findFirst()
+			    .orElse(null);
+		return cliente;
 	}
 	
 }

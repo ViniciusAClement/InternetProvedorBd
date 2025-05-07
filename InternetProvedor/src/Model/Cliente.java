@@ -6,15 +6,15 @@ public class Cliente {
 	private String nome;
 	private String CPF;
 	private Endereco endereco;
-	private PlanoDoCliente planoDeInternet;
+	private Assinatura assinatura;
 	
 	//builder da classe cliente
-	private static class Builder{
+	public static class Builder{
 		private long ID;
 		private String nome;
 		private String CPF;
 		private Endereco endereco;
-		private PlanoDoCliente planoDeInternet;
+		private Assinatura assinatura;
 		
 		public Builder Id (long ID) {
 			this.ID=ID;
@@ -32,8 +32,8 @@ public class Cliente {
 			this.endereco = endereco;
 			return this;
 		}
-		public Builder planoDeInternet (PlanoDoCliente planoDeInternet) {
-			this.planoDeInternet = planoDeInternet;
+		public Builder planoDeInternet (Assinatura assinatura) {
+			this.assinatura = assinatura;
 			return this;
 		}
 		
@@ -43,7 +43,7 @@ public class Cliente {
 			cliente.nome = this.nome;
 			cliente.CPF = this.CPF;
 			cliente.endereco = this.endereco;
-			cliente.planoDeInternet = this.planoDeInternet;
+			cliente.assinatura = this.assinatura;
 			
 			return cliente;
 		}
@@ -82,12 +82,18 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 
-	public PlanoDoCliente getPlanoDeInternet() {
-		return planoDeInternet;
+	public Assinatura getAssinatura() {
+		return assinatura;
 	}
 
-	public void setPlanoDeInternet(PlanoDoCliente planoDeInternet) {
-		this.planoDeInternet = planoDeInternet;
+	public void setAssinatura(Assinatura assinatura) {
+		this.assinatura = assinatura;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [ID=" + ID + ", nome=" + nome + ", CPF=" + CPF + ", endereco=" + endereco + ", assinatura="
+				+ assinatura + "]";
 	}
 	
 }
